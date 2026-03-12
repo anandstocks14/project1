@@ -1,10 +1,17 @@
 pipeline{
-	agent any
+	agent none
 	stages{
 		stage ('Build'){
+			agent{ label 'master' }
 			steps{
-				echo " I am modifying the file to checck trigger"
+				sh 'echo " Build running on master"'
 			}
 		}
+		stage ('Deploy'){
+			agent{ label 'node1' }
+			steps{
+				sh 'echo " Deploy running on node1"'
+			}
+		}	
 	}
 }
