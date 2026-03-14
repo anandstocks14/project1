@@ -8,10 +8,8 @@ pipeline{
         }
         stage ('build'){
             steps{
-                dir('/home/ubuntu/project1/sample-app'){
-                   sh 'sudo mvn clean install'
+                       sh 'sudo mvn clean install'
                 }
-            }
         }
         stage ('deploy'){
             steps{
