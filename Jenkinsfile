@@ -1,10 +1,10 @@
 pipeline{
     agent any
-    tools {
-        jdk 'jdk21'
-        maven 'maven3'
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
+        PATH = "${JAVA_HOME}/bin:/usr/bin:${env.PATH}"
     }
-    
+
     stages{
         stage ('Trial'){
             steps{
